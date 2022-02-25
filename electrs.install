@@ -1,0 +1,7 @@
+post_install() {
+  systemd-sysusers electrs.conf
+}
+
+post_upgrade() {
+  systemctl daemon-reload
+}
