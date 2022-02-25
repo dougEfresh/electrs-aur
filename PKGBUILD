@@ -37,7 +37,7 @@ prepare() {
 
 build() {
   cd "$pkgname-${pkgver}"
-  ROCKSDB_INCLUDE_DIR=/usr/include ROCKSDB_LIB_DIR=/usr/lib cargo build  --release --locked
+  cargo build  --release --locked
 }
 
 package() {
