@@ -1,7 +1,7 @@
 pkgbase = electrs
 	pkgdesc = An efficient re-implementation of Electrum Server in Rust
 	pkgver = 0.9.5
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/romanz/electrs
 	install = electrs.install
 	arch = x86_64
