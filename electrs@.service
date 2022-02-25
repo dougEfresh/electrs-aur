@@ -1,13 +1,13 @@
 [Unit]
 Description=Electrum Rust Server %I
-ConditionPathExists=/etc/electrs/%i.yaml
+ConditionPathExists=/etc/electrs/%i.toml
 
 [Service]
 Type=simple
 User=electrs
 Group=electrs
 WorkingDirectory=/var/lib/electrs
-ExecStart=/usr/bin/electrs --confg /etc/electrs/%i.yaml
+ExecStart=/usr/bin/electrs --confg /etc/electrs/%i.toml
 KillMode=process
 TimeoutSec=60
 Restart=always
