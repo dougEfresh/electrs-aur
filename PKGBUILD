@@ -1,7 +1,7 @@
 # Maintainer: Douglas Chimento dchimento@gmail.com
 pkgname=electrs
 pkgver=0.9.9
-pkgrel=2
+pkgrel=1
 pkgdesc="An efficient re-implementation of Electrum Server in Rust"
 arch=(x86_64 aarch64)
 url="https://github.com/romanz/electrs"
