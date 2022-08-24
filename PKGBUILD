@@ -1,6 +1,6 @@
 # Maintainer: Douglas Chimento dchimento@gmail.com
 pkgname=electrs
-pkgver=0.9.5
+pkgver=0.9.9
 pkgrel=2
 pkgdesc="An efficient re-implementation of Electrum Server in Rust"
 arch=(x86_64 aarch64)
@@ -19,7 +19,7 @@ source=("https://github.com/romanz/electrs/archive/v$pkgver/electrs-$pkgver.tar.
 	"${pkgname}.sysuser"
 	)
 provides=('electrs')
-sha256sums=("d95c1603bc4672c5fecacf47f44eaf187fbdfd70f677f8820a64f6ea3e082343"
+sha256sums=("d54519fb999d1742dbfd3e2cd0970118d6c33df9e8be4f2b8aca7d13b4d20fca"
 	    "2da98231c92136839c26d200d2158aa91efb651d27ba8558872efcf7bb15e138"
 	    "d1c2fb6f6a06d1fe6576aab3ddd04efda109dd5e4f502dc73f95dab03c5c1a9c"
 	    "458020df059d271e69e88998d805654ad827193ea19634040c27f099339527a3"
