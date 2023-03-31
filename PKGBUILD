@@ -1,6 +1,6 @@
 # Maintainer: Douglas Chimento dchimento@gmail.com
 pkgname=electrs
-pkgver=0.9.9
+pkgver=0.9.13
 pkgrel=1
 pkgdesc="An efficient re-implementation of Electrum Server in Rust"
 arch=(x86_64 aarch64)
@@ -8,32 +8,17 @@ url="https://github.com/romanz/electrs"
 license=('MIT')
 depends=('rocksdb')
 makedepends=('git' 'clang' 'cmake' 'rust')
-
-# patched from https://gitlab.alpinelinux.org/alpine/aports/-/merge_requests/30466/diffs?commit_id=2fdc0e96a8ea824b36a90b2d668af740e57f6684#a9c0e6a87987d020830dfff2cd070102a5eb0844
 source=("https://github.com/romanz/electrs/archive/v$pkgver/electrs-$pkgver.tar.gz"
-	10-rocksdb.patch
-	11-rocksdb-locked.patch
-	12-db.rs.patch
 	config.toml
 	"${pkgname}@.service"
 	"${pkgname}.sysuser"
 	)
 provides=('electrs')
-sha256sums=("d54519fb999d1742dbfd3e2cd0970118d6c33df9e8be4f2b8aca7d13b4d20fca"
-	    "2da98231c92136839c26d200d2158aa91efb651d27ba8558872efcf7bb15e138"
-	    "d1c2fb6f6a06d1fe6576aab3ddd04efda109dd5e4f502dc73f95dab03c5c1a9c"
-	    "458020df059d271e69e88998d805654ad827193ea19634040c27f099339527a3"
+sha256sums=("7e1273998d78263173d2f17987a8623a29718751f1ad13f49c67e88221381211"
             SKIP SKIP SKIP)
 validpgpkeys=('15C8C3574AE4F1E25F3F35C587CAE5FA46917CBB')
 install="${pkgname}.install"
 backup=("etc/${pkgname}/config.toml")
-
-prepare() {
-    cd "$pkgname-$pkgver"
-    patch --forward --strip=1 --input="${srcdir}/10-rocksdb.patch"
-    patch --forward --strip=1 --input="${srcdir}/11-rocksdb-locked.patch"
-    patch --forward --strip=1 --input="${srcdir}/12-db.rs.patch"
-}
 
 build() {
   cd "$pkgname-${pkgver}"
